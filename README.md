@@ -15,3 +15,5 @@ Coming-up:
  * Apply theme without restarting app
  * Save preferences
  * Stay tuned for more!
+ 
+ The latest version of the app is available for download <a href = "https://drive.google.com/open?id=0ByIVULxteULNQnVjZklEQ0psS3c">here</a>! 
