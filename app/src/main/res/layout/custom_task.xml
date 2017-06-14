@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:theme="@style/AppTheme">
+
+    <EditText
+            android:id="@+id/custom_task_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50px"
+            android:hint="Task title"/>
+
+    <EditText
+            android:id="@+id/custom_task_desc"
+            android:inputType="textMultiLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/custom_task_title"
+            android:layout_marginBottom="65px"
+            android:hint="Task description"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="50px"
+            android:padding="0px"
+            android:textSize="18sp"
+            android:text="Add a reminder: " android:id="@+id/text_view_reminder"
+            android:layout_below="@+id/custom_task_desc"/>
+
+    <ImageButton
+            android:layout_width="120px"
+            android:layout_height="100px"
+            android:tint="@color/colorPrimaryDark"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/ic_add_alert_black_24dp"
+            android:id="@+id/imageButton"
+            android:layout_below="@+id/custom_task_desc" android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text = "Create Task"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/colorPrimaryDark" android:id="@+id/submit_btn"/>
+</RelativeLayout>

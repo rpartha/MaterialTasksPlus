@@ -1,0 +1,15 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- A 'parent' preference, which enables/disables child preferences (below)
+         when checked/unchecked. -->
+    <SwitchPreference
+            android:key="notifications_app_settings"
+            android:title="@string/pref_title_app_notifications"
+            android:defaultValue="false"/>
+
+    <SwitchPreference
+            android:key="notifications_app_update_vibrate"
+            android:title="@string/pref_title_vibrate"
+            android:defaultValue="false"/>
+
+</PreferenceScreen>
