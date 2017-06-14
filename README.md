@@ -12,4 +12,6 @@ Coming-up:
  * Custom add tasks
  * Reminder notifications
  * Remove all tasks
+ * Apply theme without restarting app
+ * Save preferences
  * Stay tuned for more!
