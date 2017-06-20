@@ -28,7 +28,7 @@
     <!-- Example settings for Notifications -->
     <string name="pref_header_notifications">Notifications</string>
 
-    <string name="pref_title_app_notifications">Latest app update notifications</string>
+    <string name="pref_title_app_notifications">System notification settings</string>
 
     <string name="pref_title_ringtone">Ringtone</string>
     <string name="pref_ringtone_silent">Silent</string>

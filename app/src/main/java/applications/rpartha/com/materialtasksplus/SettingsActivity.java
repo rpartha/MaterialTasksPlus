@@ -6,12 +6,15 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.preference.*;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.app.NotificationCompat;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -112,8 +115,9 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
                     public boolean onPreferenceChange(Preference preference, Object object){
                         boolean clicked = (Boolean)object;
                         if(clicked == true) {
-                            AppCompatDelegate.setDefaultNightMode(
-                                    AppCompatDelegate.MODE_NIGHT_YES);
+                           AppCompatDelegate.setDefaultNightMode(
+                                  AppCompatDelegate.MODE_NIGHT_YES);
+
                             getActivity().finish();
                             startActivity(new Intent(getActivity(), MainActivity.class));
                             Log.d("Settings Activity", "Switch clicked");
@@ -171,6 +175,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
                    public boolean onPreferenceChange(Preference preference, Object object) {
                        boolean clicked = (Boolean)object;
                        if(clicked == true){
+                          Log.d("SettingsActivity", "SYSTEM SETTINGS CLICKED");
                            Intent intent = new Intent();
                            intent.setAction("android.settings.APP_NOTIFICATION_SETTINGS");
                            intent.putExtra("app_package", getActivity().getPackageName());
@@ -184,14 +189,13 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
 
             SwitchPreference switchPreference2 = (SwitchPreference)findPreference("notifications_app_update_vibrate");
             if(switchPreference2 != null){
-                switchPreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+                switchPreference2.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
                     @Override
                     public boolean onPreferenceChange(Preference preference, Object object) {
                         boolean clicked = (Boolean)object;
                         if(clicked == true){
-                            NotificationCompat.Builder mBuilder =
-                                    new NotificationCompat.Builder(getActivity());
-                            mBuilder.setVibrate(new long[] { 1000, 1000});
+                            startVibrate();
+                            Log.d("SettingsActivity", "VIBRATE OPTION CLICKED");
                         }
                     return true;
                     }
@@ -213,6 +217,17 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
                 return true;
             }
             return super.onOptionsItemSelected(item);
+        }
+
+        public void startVibrate() {
+            long pattern[] = { 0, 100, 200, 300, 400 };
+            Vibrator vibrator = (Vibrator) getActivity().getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
+            vibrator.vibrate(pattern, -1);
+        }
+
+        public void stopVibrate() {
+            Vibrator vibrator = (Vibrator) getActivity().getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
+            vibrator.cancel();
         }
     }
 }

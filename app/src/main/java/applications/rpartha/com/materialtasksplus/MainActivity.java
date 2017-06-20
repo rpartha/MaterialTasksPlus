@@ -106,6 +106,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed(){
+        //do nothing
+    }
+
     public void onCheckboxClicked(View view) {
         CheckBox checkbox = (CheckBox)findViewById(R.id.task_checked);
         if(checkbox.isChecked()) {
