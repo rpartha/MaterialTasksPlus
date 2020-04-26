@@ -1,4 +1,4 @@
-# MaterialTasksPlus
+# MaterialTasksPlus [DEPRECATED]
 
 A material design To-do List application built from the ground up in Android.
 
